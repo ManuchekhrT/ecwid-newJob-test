@@ -1,13 +1,6 @@
 package tj.test.ecwid.thread_local
 
-
-fun main(args: Array<String>) {
-    testCase1()
-    testCase2()
-    testCase3()
-}
-
-fun testCase1() {
+fun testCaseThreadLocal1() {
     val threadLocal = SimpleThreadLocal<Int>()
     threadLocal.set(42)
 
@@ -20,10 +13,10 @@ fun testCase1() {
     println(value2) // выводит null
 }
 
-fun testCase2() {
+fun testCaseThreadLocal2() {
     val threadLocal = SimpleThreadLocal<List<Int>>()
 
-   // Установить значение для текущего потока
+    // Установить значение для текущего потока
     val list: MutableList<Int> = ArrayList()
     list.add(1)
     list.add(2)
@@ -42,7 +35,7 @@ fun testCase2() {
     println(removedValue) // Выводит "null"
 }
 
-fun testCase3() {
+fun testCaseThreadLocal3() {
     val threadLocal = SimpleThreadLocal<String>()
 
     // Установить значение для текущего потока
